@@ -1,0 +1,63 @@
+* {
+  // margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.route-link {
+  position: relative;
+  font-size: 30px;
+  text-decoration: none;
+  color: #000000;
+  margin: 0 30px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  &:hover {
+    &::before {
+      animation: slime 4s infinite;
+    }
+  }
+}
+
+@keyframes slime {
+  0% {
+    border-radius: 50%;
+  }
+  15% {
+    border-radius: 60% 30% 40% 20%;
+  }
+  50% {
+    border-radius: 30% 70% 10% 30%;
+  }
+  70% {
+    border-radius: 40% 30% 20% 50%;
+  }
+  85% {
+    border-radius: 30% 40% 20% 40%;
+  }
+  100% {
+    border-radius: 50%;
+  }
+}

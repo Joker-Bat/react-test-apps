@@ -1,0 +1,56 @@
+.stepper-container {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.step {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ccc;
+  border: 1px solid #000000;
+  transition: all 0.3s linear;
+
+  &.completed {
+    background-color: green;
+  }
+
+  &.current-step {
+    background-color: yellow;
+  }
+}
+
+.line {
+  position: relative;
+  width: 60px;
+  height: 4px;
+  background-color: red;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    transition: all 0.2s linear;
+  }
+
+  &.active {
+    &::after {
+      width: 100%;
+      background-color: turquoise;
+      // animation: line-fill 0.5s ease-in forwards;
+    }
+  }
+}
+
+@keyframes line-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
